@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  server:
+    container_name: server
+    image: server
+    build:
+      context: ./server
+      dockerfile: dockerfile.prod
+    ports:
+      - "3000:3000"  # Map internal port 80 to external 3000 for unique access
+    environment:
+      - DATABASE_URL=postgresql://postgres:mysecretpassword@postgres-db:5432/postgres?schema=public
+
+  postgres-db:
+    container_name: postgres-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  client-frontend:
+    build: 
+      context: ./client/frontend
+      dockerfile: dockerfile.prod
+    ports:
+      - "5173:80"  # Make sure this is the port your frontend runs on
+
+  client-backend:
+    build:
+      context: ./client/client-backend
+      dockerfile: dockerfile.prod
+    ports:
+      - "3001:3001"  # Port for backend API
+
+    environment:
+      - UPLOAD_URL=http://server:3000/upload
+      - GET_URL=http://server:3000/files  
+
+
+volumes:
+  postgres-data:

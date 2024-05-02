@@ -1,0 +1,244 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  list-style-type: none; /* Removes bullet points from the li element */
+  background-color: #f8f9fa;
+}
+.file-name,
+.file-upload-id {
+  display: inline-block; /* Display as inline block to show in separate boxes */
+  width: 450px; /* Fixed width */
+  overflow: hidden; /* Hide overflow if content is too long */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-overflow: ellipsis; /* Show ellipsis for overflow text */
+}
+
+.download-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  display: inline;
+}
+
+.download-button:hover {
+  color: #0056b3;
+}
+
+.file-list-header {
+  font-size: 24px;
+  color: #333;
+  padding: 10px 0;
+}
+
+.file-list {
+  list-style-type: none; /* Removes default list styling */
+  padding: 0;
+  margin: 0 20px;
+}
+
+.toast-message {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  padding: 10px;
+  z-index: 1000; /* Ensures it appears above other content */
+  transition: opacity 0.5s ease-in-out;
+  background-color: #ffecd1;
+  border: 1px solid #ffa500;
+  border-radius: 5px;
+  text-align: center;
+  color: #333;
+}
+
+
+
+
+/* NavbarStyles.css */
+.navbar {
+  background-color: lightgray;
+  padding: 10px 20px; /* Added horizontal padding for better spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* Makes the navbar stick to the top of the viewport */
+  top: 0; /* Ensures it sticks at the top */
+  z-index: 1000; /* Higher index ensures it stays on top of other content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+  width: 100%; /* Ensures it spans the full width of the viewport */
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: black;
+  font-size: 24px; /* Slightly larger for better visibility */
+  font-weight: bold; /* Makes the brand name more prominent */
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-link {
+  margin: 0 15px; /* Increased spacing between links for easier clicking */
+  text-decoration: none;
+  color: black;
+  font-size: 16px; /* Defines a specific font size for consistency */
+  font-weight: 500; /* Medium weight for better readability */
+  transition: color 0.3s; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Changes color on hover for a visual feedback */
+}
+
+/* AppStyles.css */
+.App {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.upload-header {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+.progress {
+  width: 100%;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #28a745;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: width 0.4s ease;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  margin-top: 20px;
+}
+
+.alert-success {
+  background-color: #28a745;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+}
+
+/* General body styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Main application container styling */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Styling for space between components */
+.app-section {
+  margin-top: 20px;
+  width: 100%; /* Adjust width as needed for layout */
+  max-width: 960px; /* Set a max-width for better readability on larger screens */
+  background: white;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
