@@ -1,4 +1,4 @@
-# Merkle File Manager Zama
+# Merkle File Manager
 
 
 ## Introduction
